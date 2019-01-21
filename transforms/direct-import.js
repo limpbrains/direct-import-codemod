@@ -13,16 +13,22 @@ module.exports = (file, api, opts) => {
       const modules = importDeclaration.specifiers.filter(
         n => n.type === "ImportSpecifier"
       );
-      modules.forEach(i => {
-        const name = i.local.name;
-        const file = `${importDeclaration.source.value}/${name}`;
-        j(path).insertAfter(
-          j.importDeclaration(
-            [j.importDefaultSpecifier(j.identifier(name))],
-            j.literal(file)
-          )
-        );
-      });
+      modules
+        .sort((a, b) => {
+          if (a.local.name < b.local.name) return 1;
+          if (a.local.name > b.local.name) return -1;
+          return 0;
+        })
+        .forEach(i => {
+          const name = i.local.name;
+          const file = `${importDeclaration.source.value}/${name}`;
+          j(path).insertAfter(
+            j.importDeclaration(
+              [j.importDefaultSpecifier(j.identifier(name))],
+              j.literal(file)
+            )
+          );
+        });
       importDeclaration.specifiers = importDeclaration.specifiers.filter(
         n => n.type !== "ImportSpecifier"
       );
