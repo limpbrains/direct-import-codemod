@@ -4,6 +4,7 @@
   "description": "Use direct imports to save JS bundle size",
   "main": "transforms/direct-import.js",
   "scripts": {
+    "direct-import": "jscodeshift --parser flow --extensions js,jsx -t ./transforms/direct-import.js",
     "test": "jest"
   },
   "repository": {

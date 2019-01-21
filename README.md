@@ -16,10 +16,10 @@ npm install
 
 ```
 # yarn
-yarn direct-import <path-to-file> --module '@material-ui/core'
+yarn direct-import <path-to-file> -- --module '@material-ui/core'
 
 # npm
-npm run direct-import -- <path-to-file> --module '@material-ui/core'
+npm run direct-import <path-to-file> -- --module '@material-ui/core'
 
 # jscodeshift
 jscodeshift -t ./transforms/direct-import.js <path-to-file> --module '@material-ui/core'
