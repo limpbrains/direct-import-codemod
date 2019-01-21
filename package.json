@@ -1,0 +1,25 @@
+{
+  "name": "direct-import-codemod",
+  "version": "0.0.1",
+  "description": "Use direct imports to save JS bundle size",
+  "main": "transforms/direct-import.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limpbrains/direct-import-codemod.git"
+  },
+  "author": "Ivan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/limpbrains/direct-import-codemod/issues"
+  },
+  "homepage": "https://github.com/limpbrains/direct-import-codemod#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "jscodeshift": "^0.6.3"
+  }
+}
